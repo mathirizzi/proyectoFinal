@@ -1,4 +1,4 @@
-const fs = require("node:fs");
+import fs from "fs"
 class ProductManager {
   constructor(productsFile) {
     this.path = productsFile;
@@ -42,7 +42,7 @@ class ProductManager {
 
   async getProducts() {
     try {
-      let getList = await this.readFileProducts();
+      const getList = await this.readFileProducts();
       return getList
       
     } catch (error) {
@@ -54,12 +54,12 @@ class ProductManager {
 
   async getProductById(pid) {
     try {
-      let getList = await this.readFileProducts();
-      const result = getList.find((prod) => prod.id === pid);
+      const getListID = await this.readFileProducts();
+      const result = getListID.find((prod) => prod.id === pid);
       if (!result) {
-        return console.log("No existe el producto seleccionado");
+        return "No existe el producto seleccionado";
       }
-      return console.log("El producto seleccionado es: ", result);
+      return result;
     } catch (error) {
       console.log(error);
     }
@@ -109,7 +109,7 @@ class ProductManager {
   
 }
 
-module.exports = ProductManager;
+export default ProductManager;
 
 
 

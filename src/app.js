@@ -1,4 +1,6 @@
-const express = require("express");
+import express from 'express'
+import productsRouter from "./routers/products.router.js"
+import ProductManager from './ProductManager.js';
 
 //-------------------------SERVIDOR------------------------------//
 const app = express();
@@ -12,27 +14,19 @@ app.get("/saludo", (req, res) => {
 
 app.listen(8080, () => console.log("Servidor arriba en el puerto 8080"));
 
-
+app.use("/products", productsRouter);
+app.use("/products/:pid", productsRouter);
 
 //-------------------------PRODUCT MANAGER-----------------------------//
 
-const ProductManager = require("./ProductManager");
 
 const products = new ProductManager("products.json");
 
-//--------------------GET PRODUCTS:--------------------//
+//----------------------------------------RUTAS PRODUCTS:----------------------------------------//
 
-products.readFileProducts().then((datos) => {
-  app.get("/products", (req, res) => {
-    const limit = parseInt(req.query.limit) || 10;
-
-    const productsLimit = datos.slice(0, limit);
-
-    res.send({ datos: productsLimit });
-  });
-});
 
 //--------------------GET PRODUCTS BY ID:--------------------//
+/*
 products.readFileProducts().then((datos) => {
   app.get("/products/:pid", (req, res) => {
     const { pid } = req.params;
@@ -41,6 +35,15 @@ products.readFileProducts().then((datos) => {
     res.send(datosId);
   });
 });
+*/
+//----------------------------------------RUTAS CART----------------------------------------//
+
+
+
+
+
+
+
 //--------------------Agregando productos:--------------------//
 /*
 async function addingProduct(
