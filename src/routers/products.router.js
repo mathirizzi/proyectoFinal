@@ -37,6 +37,15 @@ router.get('/:pid', async (req,res)=>{
     }
 })
 
+router.post('/', async (req,res)=>{
+    const product = req.body;
+    const productAdd = await products.addProduct(product)
+    res.status(201).send({
+        status: 'success',
+        result: productAdd
+    })
+})
+
 
 
 export default router;
