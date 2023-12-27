@@ -38,14 +38,49 @@ router.get('/:pid', async (req,res)=>{
 })
 
 router.post('/', async (req,res)=>{
-    const product = req.body;
-    const productAdd = await products.addProduct(product)
+    const {title, description, price, thumbnail,stock, code} = req.body;
+    const newProduct = {
+        title: title,
+        description: description,
+        price: price,
+        thumbnail: thumbnail,
+        stock: stock,
+        code: code
+      }
+    const productAdd = await products.addProduct(newProduct)
     res.status(201).send({
         status: 'success',
         result: productAdd
     })
 })
 
+router.delete('/:pid', async (req,res)=>{
+    const {pid} = req.params;
+    const productDeleted = await products.deleteProduct(parseInt(pid))
+    res.send({
+        status: 'success',
+        result: productDeleted
+    })
+})
+
+router.put('/:pid', async (req,res)=>{
+    const {pid} = req.params;
+    const {title, description, price, thumbnail,stock, code, id} = req.body;
+    const newProductUpdated = {
+        title: title,
+        description: description,
+        price: price,
+        thumbnail: thumbnail,
+        stock: stock,
+        code: code,
+        id: id
+    }
+      const productUpdated = await products.updateProduct(parseInt(pid), newProductUpdated)
+    res.send({
+        status: 'success',
+        result: productUpdated
+    })
+})
 
 
 export default router;

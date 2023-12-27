@@ -22,11 +22,10 @@ class ProductManager {
   async addProduct(newProduct) {
     try {
       let productsList = await this.readFileProducts();
-
       if (productsList.length === 0) {
-        productsList.push({ ...newProduct, id: 1 });
+      await  productsList.push({ ...newProduct, id: 1 });
       } else {
-        productsList.push({ ...newProduct, id: productsList.length + 1 });
+       await productsList.push({ ...newProduct, id: productsList.length + 1 });
       }
 
       await fs.promises.writeFile(
@@ -114,28 +113,3 @@ export default ProductManager;
 
 
 
- //--------------------Ver Lista de productos:--------------------//
-    /*
-    console.log(products.getProducts())
-    */
-    //--------------------Ver producto seleccionado segun su ID:--------------------//
-    /*
-    console.log(products.getProductById(1))
-    */
-    //--------------------Actualizar producto seleccionado segun su ID:--------------------//
-    /*
-    console.log(products.updateProduct(4, {
-        title: "UPDATE2",
-        description: "UPDATE2",
-        price: "UPDATE2",
-        thumbnail: "UPDATE2",
-        stock: "UPDATE2",
-        code: "UPDATE2",
-    }))
-    
-    */
-    //--------------------Eliminar producto seleccionado segun su ID:--------------------//
-    /*
-    console.log(products.deleteProduct(3))
-    
-    */
