@@ -15,8 +15,8 @@ app.get("/saludo", (req, res) => {
 
 app.listen(8080, () => console.log("Servidor arriba en el puerto 8080"));
 
-app.use("/api/products", productsRouter);
-app.use("/api/products/:pid", productsRouter);
+app.use("/products", productsRouter);
 
-app.use("/api/carts", cartsRouter);
-app.use("/api/carts/:cid", cartsRouter);
+app.use("/carts", cartsRouter);
+
+app.use("/products", ()=>{});

@@ -46,4 +46,21 @@ router.post('/', async (req,res)=>{
     }
 })
 
+router.post('/:cid/products/:pid', async (req,res)=>{
+    try {
+        const {cid,pid} = req.params
+        //const {quantity} = req.body
+        const result = await carts.addProductToCart(Number(cid),Number(pid))
+        res.send({
+            status: 'success',
+            payload: result
+        })
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+   
+})
+
 export default router;

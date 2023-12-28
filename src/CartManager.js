@@ -77,16 +77,18 @@ async getCartById(cid){
     if(cartIdx === -1){
         return 'El carrito seleccionado no existe'
     }
-    const productIdx = carts[cartIdx].products.findIndex(produc => produc.id === pid)
+    const productIdx = cartsList[cartIdx].products.findIndex(produc => produc.product === pid)
     if(productIdx === -1){
-        carts[cartIdx].products.push({
+        cartsList[cartIdx].products.push({
             product: pid,
             quantity: 1
         })
     }else{
-        carts[cartIdx].products[productIdx].quantity += 1
+        cartsList[cartIdx].products[productIdx].quantity += 1
     }
-  }
+    await fs.promises.writeFile(this.path, JSON.stringify(cartsList, null, 2), "utf-8")
+  return cartsList[cartIdx]
+}
   catch (error) {
     console.log(error)
         
