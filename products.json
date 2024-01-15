@@ -1,46 +1,92 @@
 [
   {
-    "title": "helado",
-    "description": "crema helada",
-    "price": 2500,
-    "thumbnail": "imagen",
-    "stock": 100,
-    "code": "A1",
+    "title": "Mochila",
+    "description": "Mochila amplia, de tela firme.",
+    "price": 50400,
+    "thumbnail": "imagen1",
+    "stock": 50,
+    "code": "A001",
     "id": 1
   },
   {
-    "title": "2",
-    "description": "harina",
-    "price": 3500,
-    "thumbnail": "imagen",
-    "stock": 100,
-    "code": "A1",
+    "title": "Remera",
+    "description": "Remera manga corta, de estilo deportivo, tela fina",
+    "price": 20300,
+    "thumbnail": "imagen2",
+    "stock": 30,
+    "code": "A002",
     "id": 2
   },
   {
-    "title": "3",
-    "description": "harina",
-    "price": 3500,
-    "thumbnail": "imagen",
-    "stock": 100,
-    "code": "A1",
+    "title": "Pantalon corto",
+    "description": "Pantalon corto deportivo",
+    "price": 15600,
+    "thumbnail": "imagen3",
+    "stock": 25,
+    "code": "A003",
     "id": 3
   },
   {
-    "title": "4",
-    "description": "harina",
-    "price": 3500,
-    "thumbnail": "imagen",
-    "stock": 100,
-    "code": "A1",
+    "title": "Pantalon largo",
+    "description": "Pantalon largo deportivo, ajustado al cuerpo",
+    "price": 22100,
+    "thumbnail": "imagen4",
+    "stock": 5,
+    "code": "A004",
     "id": 4
   },
   {
-    "title": "actualizado",
-    "description": "harina",
-    "price": 3500,
-    "thumbnail": "imagen",
-    "stock": 100,
-    "code": "A1"
+    "title": "Musculosa",
+    "description": "Musculosa de tela fina, para entrenamiento",
+    "price": 10200,
+    "thumbnail": "imagen5",
+    "stock": 11,
+    "code": "A005",
+    "id": 5
+  },
+  {
+    "title": "Zapatillas",
+    "description": "Zapatillas deportivas, para running",
+    "price": 54200,
+    "thumbnail": "imagen6",
+    "stock": 10,
+    "code": "A006",
+    "id": 6
+  },
+  {
+    "title": "Riñonera",
+    "description": "Riñonera, con bolsillos para llevar accesorios como celular, billetera",
+    "price": 12200,
+    "thumbnail": "imagen7",
+    "stock": 19,
+    "code": "A007",
+    "id": 7
+  },
+  {
+    "title": "Buzo",
+    "description": "Buzo con capucha",
+    "price": 33800,
+    "thumbnail": "imagen8",
+    "stock": 31,
+    "code": "A008",
+    "id": 8
+  },
+  {
+    "title": "Campera impermeable",
+    "description": "Campera de tela fina",
+    "price": 61200,
+    "thumbnail": "imagen9",
+    "stock": 15,
+    "code": "A009",
+    "id": 9
+  },
+  {
+    "title": "Guantes",
+    "description": "Guantes para gimnasio, para tener mejor agarre en los instrumentos pesados",
+    "price": 11200,
+    "thumbnail": "imagen10",
+    "stock": 8,
+    "code": "A010",
+    "id": 10
   }
 ]

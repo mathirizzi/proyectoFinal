@@ -1,4 +1,4 @@
-import fs from "fs"
+import fs from "fs";
 class ProductManager {
   constructor(productsFile) {
     this.path = productsFile;
@@ -10,8 +10,7 @@ class ProductManager {
     try {
       const productsData = await fs.promises.readFile(this.path, "utf-8");
       const productsJs = await JSON.parse(productsData);
-    return productsJs;
-      
+      return productsJs;
     } catch (error) {
       return [];
     }
@@ -23,9 +22,9 @@ class ProductManager {
     try {
       let productsList = await this.readFileProducts();
       if (productsList.length === 0) {
-      await  productsList.push({ ...newProduct, id: 1 });
+        await productsList.push({ ...newProduct, id: 1 });
       } else {
-       await productsList.push({ ...newProduct, id: productsList.length + 1 });
+        await productsList.push({ ...newProduct, id: productsList.length + 1 });
       }
 
       await fs.promises.writeFile(
@@ -42,8 +41,7 @@ class ProductManager {
   async getProducts() {
     try {
       const getList = await this.readFileProducts();
-      return getList
-      
+      return getList;
     } catch (error) {
       console.log(error);
     }
@@ -102,14 +100,6 @@ class ProductManager {
       console.log(error);
     }
   }
-
-
-
-  
 }
 
 export default ProductManager;
-
-
-
-
