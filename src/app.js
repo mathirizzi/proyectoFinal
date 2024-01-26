@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.listen(8080, () => console.log("Servidor arriba en el puerto 8080"));
 
-app.use("/products", productsRouter);
+app.use("/api/products", productsRouter);
 
-app.use("/carts", cartsRouter);
+app.use("/api/carts", cartsRouter);
 
-app.use("/products", () => {});
+app.use("/api/products", () => {});
